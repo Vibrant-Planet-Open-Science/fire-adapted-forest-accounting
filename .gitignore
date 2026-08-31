@@ -1,0 +1,11 @@
+# Claude session rules — local only, not for publication
+CLAUDE.md
+
+# Quarto render artifacts — regenerate with: quarto render docs/methodology.qmd
+docs/methodology.html
+docs/methodology_files/
+docs/methodology.pdf
+.quarto/
+
+# macOS
+.DS_Store
