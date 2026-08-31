@@ -1,0 +1,68 @@
+---
+title: "Fire-Adapted Forest Carbon: An Observed-Counterfactual Quantification Approach"
+author:
+  - Katharyn Duffy
+  - Ethan Yackulic
+  - Spencer Plumb
+date: "August 2026"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    html-math-method: mathjax
+    # The .md carries its own title and byline; suppress Quarto's title block
+    title-block-style: none
+  pdf:
+    documentclass: report
+    pdf-engine: xelatex
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    colorlinks: true
+    geometry: margin=1in
+    fontsize: 11pt
+    include-in-header:
+      text: |
+        % ── Fonts: Inter Light body, Poppins Medium headers ──
+        % Requires Inter and Poppins installed locally (fonts.google.com)
+        \usepackage{fontspec}
+        \setmainfont{Inter Light}[
+          BoldFont = Inter SemiBold,
+          ItalicFont = Inter Light Italic,
+          BoldItalicFont = Inter SemiBold Italic
+        ]
+        \newfontfamily\headingfont{Poppins Medium}
+        % Mono face needs Unicode coverage for code spans (Δ, ≤, Ḡ …)
+        \setmonofont{Menlo}[Scale=MatchLowercase]
+        \usepackage{sectsty}
+        \allsectionsfont{\headingfont}
+        % ── Captions: the .md bakes its own "Figure N." text ──
+        \usepackage{caption}
+        \captionsetup{labelformat=empty}
+        % ── Footer: attribution + DOI placeholder + page number ──
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \fancyfoot[L]{\small Duffy, Yackulic \& Plumb 2026}
+        \fancyfoot[C]{\small DOI: forthcoming}
+        \fancyfoot[R]{\small \thepage}
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0.4pt}
+        % Chapter-opening pages use the same footer
+        \fancypagestyle{plain}{
+          \fancyhf{}
+          \fancyfoot[L]{\small Duffy, Yackulic \& Plumb 2026}
+          \fancyfoot[C]{\small DOI: forthcoming}
+          \fancyfoot[R]{\small \thepage}
+          \renewcommand{\headrulewidth}{0pt}
+          \renewcommand{\footrulewidth}{0.4pt}
+        }
+---
+
+<!-- Thin Quarto wrapper: the single source of truth is methodology.md.
+     Edit methodology.md, never this file's body. Render with:
+     quarto render docs/methodology.qmd            (HTML)
+     quarto render docs/methodology.qmd --to pdf   (PDF)
+     PDF requires the Inter and Poppins font families installed. -->
+
+{{< include methodology.md >}}
